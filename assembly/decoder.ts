@@ -197,6 +197,7 @@ export class JSONDecoder<JSONHandlerT extends JSONHandler> {
       assert(this.readChar() == "}".charCodeAt(0), "Unexpected end of object");
     }
     this.handler.popObject();
+    this.state.lastKey="";
     return true;
   }
 
